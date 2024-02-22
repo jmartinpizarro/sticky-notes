@@ -3,26 +3,36 @@ import './App.css';
 import Note from './Note';
 
 function App() {
-  const [notes, setNotes] = useState([]);
+    const [notes, setNotes] = useState([]);
+    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
-  useEffect(() => {
-    const notesContainer = document.querySelector('.notes-container');
+    useEffect(() => {
+        const notesContainer = document.querySelector('.notes-container');
 
-    const handleClick = () => {
-      setNotes([...notes, <Note key={notes.length}/>]);
-    };
+        const obtainPosition = (event) => {
+            const { clientX, clientY } = event;
+            setMousePosition({ x: clientX, y: clientY });
+        };
 
-    notesContainer.addEventListener('click', handleClick);
+        window.addEventListener('mousemove', obtainPosition);
 
-    return () => { /*función de limpieza*/
-      notesContainer.removeEventListener('click', handleClick);
-    };
-  }, [notes]);
-  return (
-    <div className='notes-container'>
-      {notes}
-    </div>
-  );
+        const handleClick = () => {
+            setNotes([...notes, <Note key={notes.length} posX={mousePosition.x} posY={mousePosition.y} />]);
+        };
+
+        notesContainer.addEventListener('click', handleClick);
+
+        return () => {
+            window.removeEventListener('mousemove', obtainPosition);
+            notesContainer.removeEventListener('click', handleClick);
+        };
+    }, [notes, mousePosition]);
+
+    return (
+        <div className='notes-container'>
+            {notes}
+        </div>
+    );
 }
 
 export default App;
