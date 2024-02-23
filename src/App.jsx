@@ -23,13 +23,15 @@ function App() {
     }, []);
 
     const handleSpaceKeyDown = (event) => { /*for adding new notes to the board */
-        if (event.code === "Space") {
+        if (event.code === "ControlLeft") {
             setNotes([...notes, <Note key={notes.length} posX={mousePosition.x} posY={mousePosition.y} />]);
         }
     };
 
     return (
         <div className='notes-container' onKeyDown={handleSpaceKeyDown} tabIndex={0}>
+            <h1 className='text'>Press ctrl for creating a note</h1>
+            <h1 className='text'>Click and drag to move it!</h1>
             {notes.map((note, index) => (
                 <Note
                     key={index}

@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import Title from './Title';
 import { useRef, useState } from 'react';
 
 function Note({ posX, posY }) {
@@ -36,12 +37,15 @@ function Note({ posX, posY }) {
                 backgroundColor: 'yellowgreen',
                 border: '1px solid white',
                 position: 'absolute',
-                cursor: isDragging ? 'grabbing' : 'pointer'
+                cursor: isDragging ? 'grabbing' : 'pointer',
+                transition: 'transform .5s ease'
             }}
             onMouseDown={handleMouseDown}
             onMouseMove={handleMouseMove}
             onMouseUp={handleMouseUp}
-        ></div>
+        >
+            <Title/>
+        </div>
     );
 }
 
