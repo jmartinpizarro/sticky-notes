@@ -1,8 +1,8 @@
-# React + Vite
+# Sticky Notes
+This projects simulates a sticky notes application, where you can create, move and edit notes.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+For creating this project, I have used React.js and Vite.
 
-Currently, two official plugins are available:
+## Wanna work with the source code?
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Feel free to use the code as you want to! If you see any mistakes, or things that could be improven, just to a pull request!
