@@ -5,4 +5,4 @@ For creating this project, I have used React.js and Vite.
 
 ## Wanna work with the source code?
 
-Feel free to use the code as you want to! If you see any mistakes, or things that could be improven, just to a pull request!
+Feel free to use the code as you want to! If you see any mistakes, or things that could be improven, just do a pull request!
